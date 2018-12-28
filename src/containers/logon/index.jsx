@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Route, Switch, Link } from "react-router-dom";
 
-
+// MATERIAL UI
 import Grid from '@material-ui/core/Grid';
 
-
+// COMPONENTS
 import Login from "./components/login";
 import Register from "./components/register";
 import Reset from "./components/reset";
@@ -29,6 +29,7 @@ class Logon extends React.Component {
                 <Route exact path="/" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/reset" component={Reset} />
+                <Route component={Login} />
               </Switch>
             </div>
           </Grid>

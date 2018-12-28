@@ -1,10 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { TextField, Snackbar, IconButton, Button } from "@material-ui/core/";
+// REDUX 
+import {connect} from 'react-redux';
+import { bindActionCreators } from "redux";
+import {loginAction} from '../../redux/logonActions';
 
+// MATERIAL 
+import { TextField, Snackbar, IconButton, Button, CircularProgress } from "@material-ui/core/";
+
+// ICONS
 import CloseIcon from "@material-ui/icons/Close";
-import CircularProgress from "@material-ui/core/CircularProgress";
 
 class Login extends React.Component {
   constructor(props) {
@@ -24,7 +30,10 @@ class Login extends React.Component {
   };
 
   handleForm = () => {
-    console.log(this.state);
+    const {loginAction} = this.props;
+    const {username, password} = this.state;
+
+    loginAction(username, password);
   };
 
   handleClose = () => {
@@ -32,6 +41,7 @@ class Login extends React.Component {
   };
 
   render() {
+    const {loadingLogin} = this.props;
     return (
       <div>
         <Snackbar
@@ -72,10 +82,26 @@ class Login extends React.Component {
           Entrar
           </Button>
         </form>
-        <CircularProgress />
+        {(loadingLogin)?<CircularProgress />:null}
       </div>
     );
   }
 }
 
-export default Login;
+const mapStateToProps = store => {
+  return {
+    loadingLogin: store.logon.loadingLogin
+  }
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    loginAction
+  }, 
+  dispatch
+)
+
+export default connect(
+  mapStateToProps, 
+  mapDispatchToProps
+)(Login);

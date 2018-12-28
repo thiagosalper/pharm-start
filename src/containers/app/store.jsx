@@ -1,21 +1,18 @@
 import 'regenerator-runtime/runtime';
 import {createStore, combineReducers, applyMiddleware} from "redux";
-import createSagaMiddleware from "redux-saga";
+import thunk from 'redux-thunk';
 
-import appSaga from "./appSaga";
-
+// REDUCERS
+import logon from "../logon/redux/logonReducer";
 import dash from "../dash/redux/dashReducer";
-
-const sagaMiddleware = createSagaMiddleware();
 
 const Store = createStore(
   combineReducers({
+    logon,
     dash
   }),
-  applyMiddleware(sagaMiddleware)
+  applyMiddleware(thunk)
 );
-
-sagaMiddleware.run(appSaga);
 
 window.store = Store;
 
