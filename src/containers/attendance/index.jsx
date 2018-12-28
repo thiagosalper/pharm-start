@@ -6,8 +6,85 @@ import TableRocket from '../../components/TableRocket';
 
 const mock = [
     {
-        
-    }
+        id: 1,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },    
+    {
+        id: 2,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },
+    {
+        id: 3,
+        canal: '2',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },    
+    {
+        id: 4,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },    
+    {
+        id: 5,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },    
+    {
+        id: 6,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },    
+    {
+        id: 7,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },    
+    {
+        id: 8,
+        canal: 'Manipulaê',
+        cliente: 'Mock',
+        data: "15/12/2018 - 01:41:01",
+        detalhes: '',
+        modificado: '',
+        status: 'Novo',
+        telefone: '9999-2222'
+    },
 ]
 
 class Attendance extends React.PureComponent {
@@ -31,10 +108,9 @@ class Attendance extends React.PureComponent {
     render() {
         return (
             <div>
-                Attendance
                 <TableRocket
                     columns={config.attendanceParameters}
-                    tableData={this.state.list}
+                    data={mock}
                 />
             </div>
         );

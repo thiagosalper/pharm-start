@@ -1,12 +1,45 @@
 import React from 'react';
 import ReactTable from "react-table";
 import PropTypes from 'prop-types';
+import "react-table/react-table.css";
 
-export default (props) => (
-    <React.Fragment>
-        <ReactTable {...props} />
-    </React.Fragment>
-)
+function TableRocket(props) {
+    const {
+        data,
+        columns,
+        previousText,
+        nextText,
+        loadingText,
+        noDataText,
+        pageText,
+        ofText,
+        rowsText,
+        showPaginationBottom,
+        defaultPageSize,
+        className
+    } = props;
+
+    console.log('data', props);
+
+    return (
+        <React.Fragment>
+            <ReactTable  
+                data={data} 
+                columns={columns} 
+                previousText={previousText} 
+                nextText={nextText} 
+                loadingText={loadingText} 
+                noDataText={noDataText} 
+                pageText={pageText} 
+                ofText={ofText} 
+                rowsText={rowsText} 
+                showPaginationBottom={showPaginationBottom} 
+                defaultPageSize={defaultPageSize}
+                className={className}
+            />
+        </React.Fragment>
+    );
+};
 
 TableRocket.propTypes = {
     data: PropTypes.array,
@@ -36,5 +69,7 @@ TableRocket.defaultProps = {
     rowsText: 'linhas',
     defaultPageSize: 5,
     showPaginationBottom: true,
-    className="-striped -highlight"
+    className: "-striped -highlight"
 };
+
+export default TableRocket;
