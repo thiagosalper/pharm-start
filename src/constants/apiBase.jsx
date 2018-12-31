@@ -34,6 +34,12 @@ export const GET_ADDRESS_BY_CEP_URL = `${BASE_URL}/cep`;
 export const ATTENDANCE_PAGE = `${BASE_URL}/chamado/ResumoChamadosFarmacia`;
 export const ATTENDANCE_DETAILS = `${BASE_URL}/chamado/detalhesChamado`;
 export const STATUS_LIST = `${BASE_URL}/chamado/status/all`;
+export const ATTENDANCE_PAGE_REQUEST = "ATTENDANCE_PAGE_REQUEST";
+export const ATTENDANCE_PAGE_SUCCESS = "ATTENDANCE_PAGE_SUCCESS";
+export const ATTENDANCE_PAGE_FAILURE = "ATTENDANCE_PAGE_FAILURE";
+export const GET_STATUS_LIST_REQUEST = 'GET_STATUS_LIST_REQUEST';
+export const GET_STATUS_LIST_SUCCESS = 'GET_STATUS_LIST_SUCCESS';
+export const GET_STATUS_LIST_FAILURE = 'GET_STATUS_LIST_FAILURE';
 
 //budget
 export const BUDGET_PAGE = `${BASE_URL}/orcamento/OrcamentosChamado`;
