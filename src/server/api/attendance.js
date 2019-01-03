@@ -1,7 +1,7 @@
 import * as constants from "constants/paths";
 import axios from 'axios';
 
-export const getResumoChamadoFarmacia = (idFarmacia = '') => (
+export const getServiceCallSummary = (idFarmacia = '') => (
     new Promise((resolve, reject) => {
         axios.get(`${constants.ATTENDANCE_PAGE}/${idFarmacia}`)
             .then(({ data }) => resolve(data))
@@ -9,7 +9,7 @@ export const getResumoChamadoFarmacia = (idFarmacia = '') => (
     })
 );
 
-export const getDetalhesChamado = (idChamado = '') => (
+export const getServiceCallDetails = (idChamado = '') => (
     new Promise((resolve, reject) => {
         axios.get(`${constants.ATTENDANCE_DETAILS}/${idChamado}`)
             .then(({ data }) => resolve(data))

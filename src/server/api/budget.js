@@ -34,10 +34,10 @@ export const createBudget = data => {
   });
 };
 
-export const removeBudget = id => {
+export const removeBudget = (idBudget = '') => {
   new Promise((resolve, reject) => {
     axios
-      .delete(`${constants.REMOVE_BUDGET}/${id}`)
+      .delete(`${constants.REMOVE_BUDGET}/${idBudget}`)
       .then(({ data }) => resolve(data))
       .reject(err => reject(err));
   });
